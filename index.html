@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Genesis</title>
+</head>
+<body>
+    <div>
+        <button onclick="playGame()" class="button">Start</button>
+        <button onclick="gameOver()" class="button" id="btnStop" disabled>Stop</button>
+
+        <select class="select">
+            <option value="3000" disabled selected>Selecione o intervalo</option>
+            <option value="1000">1 segundo</option>
+            <option value="3000">3 segundos</option>
+            <option value="5000">5 segundos</option>
+          </select>
+    </div>
+
+    <div>
+        
+    </div>
+    
+    <div class="main-game">
+        <div class="genius">
+            <button class="blue" disabled></button>
+            <button class="yellow" disabled></button>
+            <button class="red" disabled></button>
+            <button class="green" disabled></button>
+        </div>
+
+    </div>
+
+    <div class="message">Bem vindo ao Gênesis!<br>Clique em Start</div>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
