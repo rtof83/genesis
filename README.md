@@ -1,6 +1,6 @@
 # Genesis
 
-## Projeto Criando Jogo de Memória estilo Genius
+## Projeto Eduzz Fullstack Developer #2 | Criando Jogo de Memória estilo Genius
 
 ### Reference: [SpruceGabriela/genesis-dio](https://github.com/SpruceGabriela/genesis-dio)
 
