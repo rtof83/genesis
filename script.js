@@ -17,7 +17,7 @@ const message = document.querySelector('.message');
 const stop = document.getElementById('btnStop');
 
 // ordem aletoria de cores
-let shuffleOrder = () => {
+const shuffleOrder = () => {
     let colorOrder = Math.floor(Math.random() * 4);
     order[order.length] = colorOrder;
     clickedOrder = [];
@@ -29,8 +29,7 @@ let shuffleOrder = () => {
 }
 
 // ativa proxima cor
-let lightColor = (element, number) => {
-    //element.classList.remove('selected');
+const lightColor = (element, number) => {
     number = number * 1000;
 
     setTimeout(() => {
@@ -43,7 +42,7 @@ let lightColor = (element, number) => {
 }
 
 //checa se os botoes clicados são os mesmos da ordem gerada no jogo
-let checkOrder = () => {
+const checkOrder = () => {
     let check = false;
     for (let i in clickedOrder) {
         if(clickedOrder[i] != order[i]) {
@@ -64,7 +63,7 @@ let checkOrder = () => {
 }
 
 // clique do usuario
-let click = (color) => {
+const click = (color) => {
     clickedOrder[clickedOrder.length] = color;
     createColorElement(color).classList.add('selected');
 
@@ -75,10 +74,10 @@ let click = (color) => {
 }
 
 // retorna cor
-let createColorElement = (color) => {
-    if(color == 0) {
+const createColorElement = (color) => {
+    if (color == 0) {
         return green;
-    } else if(color == 1) {
+    } else if (color == 1) {
         return red;
     } else if (color == 2) {
         return yellow;
@@ -88,13 +87,13 @@ let createColorElement = (color) => {
 }
 
 // próximo nivel
-let nextLevel = (checkScore) => {
+const nextLevel = (checkScore) => {
     if (checkScore) score++;
     shuffleOrder();
 }
 
 // game over
-let gameOver = () => {
+const gameOver = () => {
     message.innerText = `Pontuação: ${score}!\nVocê perdeu o jogo! Clique em Start`;
     order = [];
     clickedOrder = [];
@@ -103,7 +102,7 @@ let gameOver = () => {
 }
 
 // iniciar jogo
-let playGame = () => {
+const playGame = () => {
     alert('Iniciando novo jogo!');
     score = 0;
     buttonState(false);
@@ -112,14 +111,14 @@ let playGame = () => {
     nextLevel();
 }
 
-// clique para as cores
+// click para as cores
 green.onclick = () => click(0);
 red.onclick = () => click(1);
 yellow.onclick = () => click(2);
 blue.onclick = () => click(3);
 
 // button state
-let buttonState = (state) => {
+const buttonState = (state) => {
     green.disabled = state;
     red.disabled = state;
     yellow.disabled = state;
