@@ -1,6 +1,7 @@
 # Genesis
 
-## Projeto Eduzz Fullstack Developer #2 | Criando Jogo de Memória estilo Genius
+## Projeto Eduzz Fullstack Developer #2
+## Criando Jogo de Memória estilo Genius
 
 ### adicionado
 - `função 'start'`;
