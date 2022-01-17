@@ -9,8 +9,8 @@
 <body>
     <div>
         <button onclick="playGame()" class="button">Start</button>
-        <button onclick="gameOver()" class="button" id="btnStop" disabled>Stop</button>
-
+        <button onclick="gameOver(true)" class="button" id="btnStop" disabled>Stop</button>
+        
         <select class="select">
             <option value="3000" disabled selected>Selecione o intervalo</option>
             <option value="1000">1 segundo</option>
@@ -19,16 +19,16 @@
         </select>
     </div>
     
+    <div class="message">Bem vindo ao Gênesis!<br>Clique em Start</div>
+
     <div class="main-game">
-        <div class="genius">
+        <div id="main" class="genius-over">
             <button class="blue" disabled></button>
             <button class="yellow" disabled></button>
             <button class="red" disabled></button>
             <button class="green" disabled></button>
         </div>
     </div>
-
-    <div class="message">Bem vindo ao Gênesis!<br>Clique em Start</div>
     <script type="text/javascript" src="script.js"></script>
 </body>
 </html>

@@ -1,11 +1,14 @@
 let order = [];
 let clickedOrder = [];
 let score = 0;
+let over;
 
 // 0 - verde
 // 1 - vermelho
 // 2 - amarelo
 // 3 - azul
+
+const main = document.getElementById('main');
 
 const blue = document.querySelector('.blue');
 const red = document.querySelector('.red');
@@ -45,7 +48,7 @@ const lightColor = (element, number) => {
 const checkOrder = () => {
     let check = false;
     for (let i in clickedOrder) {
-        if(clickedOrder[i] != order[i]) {
+        if(clickedOrder[i] != order[i] || over) {
             gameOver();
             check = true;
             break;
@@ -93,22 +96,24 @@ const nextLevel = (checkScore) => {
 }
 
 // game over
-const gameOver = () => {
+const gameOver = (state) => {
+    state ? over = true : null;
     message.innerText = `Pontuação: ${score}!\nVocê perdeu o jogo! Clique em Start`;
     order = [];
     clickedOrder = [];
-
+    
     buttonState(true);
 }
 
 // iniciar jogo
 const playGame = () => {
     alert('Iniciando novo jogo!');
+    over = false;
     score = 0;
-    buttonState(false);
     message.innerText = `Pontuação: ${score}`;
-
+    
     nextLevel();
+    buttonState(false);
 }
 
 // click para as cores
@@ -125,5 +130,11 @@ const buttonState = (state) => {
     blue.disabled = state;
     stop.disabled = state;
 
-    state ? select.disabled = false : select.disabled = true;
+    if (state) {
+        select.disabled = false;
+        main.className = 'genius-over';
+    } else {
+        select.disabled = true;
+        main.className = 'genius';
+    }    
 }

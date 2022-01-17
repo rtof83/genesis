@@ -15,12 +15,27 @@ body {
     display: grid;
     grid-template-areas: 'verde vermelho'
     'amarelo azul';
-    grid-gap: 2rem;
-    border: 2rem solid black;
+    grid-gap: 1.5rem;
+    border: 1.5rem solid black;
     background-color: black;
     border-radius: 100%;
     width: 600px;
     height: 600px;
+    transition: .3s;
+}
+
+.genius-over {
+    display: grid;
+    grid-template-areas: 'verde vermelho'
+    'amarelo azul';
+    opacity: .3;
+    grid-gap: 1rem;
+    border: 1rem solid black;
+    background-color: black;
+    border-radius: 100%;
+    width: 480px;
+    height: 480px;
+    transition: .3s;
 }
 
 .blue {
@@ -65,7 +80,7 @@ body {
 .message {
     font-size: 2rem;
     font-weight: bolder;
-    margin-top: 2rem;
+    margin: 1rem 1rem;
     justify-content: center;
     text-align: center;
     display: flex;
